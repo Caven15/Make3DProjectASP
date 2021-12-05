@@ -1,0 +1,68 @@
+﻿@model Make3DProjectUI.Models.ArticleASPModel
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+
+<div>
+    <h4>ArticleASPModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomCreateur)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomCreateur)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date_envoi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date_envoi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date_modif)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date_modif)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Statut)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Statut)
+        </dd>
+    </dl>
+</div>
+<div>
+    @switch (Model.Statut)
+    {
+        case Make3DProjectBLL.Models.ArticleStatutEnum.Ok:
+            <a class="btn btn-danger" asp-area="" asp-controller="Article" asp-action="Bloquer" asp-route-id="@Model.Id">Bloquer</a>
+            break;
+        case Make3DProjectBLL.Models.ArticleStatutEnum.Signaler:
+            <a class="btn btn-warning" asp-area="" asp-controller="Article" asp-action="Designaler" asp-route-id="@Model.Id">Désignaler</a>
+            <a class="btn btn-danger" asp-area="" asp-controller="Article" asp-action="Bloquer" asp-route-id="@Model.Id">Bloquer</a>
+            break;
+        case Make3DProjectBLL.Models.ArticleStatutEnum.Bloquer:
+            <a class="btn btn-success" asp-area="" asp-controller="Article" asp-action="Debloquer" asp-route-id="@Model.Id">Débloquer</a>
+            break;
+        default:
+            break;
+    }
+<a asp-action="Index">Retour a la liste</a>
+</div>

@@ -1,0 +1,50 @@
+﻿@model Make3DProjectUI.Models.ArticleASPModel
+
+@{
+    ViewData["Title"] = "Déblocage";
+}
+
+<h1>Déblocage</h1>
+
+<h3>Voulez vous vraimment débloquer cet article ?</h3>
+<div>
+    <h4>Détails de l'article</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomCreateur)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomCreateur)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date_envoi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date_envoi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date_modif)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date_modif)
+        </dd>
+    </dl>
+    
+    <form asp-action="Debloquer">
+        <input type="submit" value="Confirmer" class="btn btn-success" /> |
+        <a asp-action="Index">Annuler</a>
+    </form>
+</div>
