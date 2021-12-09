@@ -16,5 +16,8 @@ namespace Make3DProjectBLL.Models
         public DateTime Date_modif { get; set; }
         public string NomCreateur { get; set; }
         public ArticleStatutEnum Statut { get; set; }
+
+        // Liste des ID des fichiers concernant l'articles
+        public IEnumerable<int> Id_fichiers { get; set; }
     }
 }

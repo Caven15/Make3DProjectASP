@@ -36,5 +36,9 @@ namespace Make3DProjectUI.Models
 
         [DisplayName("Statut :")]
         public ArticleStatutEnum Statut { get; set; }
+
+
+        // Liste des ID des fichiers concernant l'articles
+        public IEnumerable<int> Id_fichiers { get; set; }
     }
 }

@@ -47,7 +47,27 @@
             @Html.DisplayFor(model => model.Statut)
         </dd>
     </dl>
+
 </div>
+@if (Model.Id_fichiers is not null && Model.Id_fichiers.Count() > 0)
+{
+<div>
+    <h4>Liste des fichiers</h4>
+    <hr />
+    <div class="container">
+        <div class="row">
+            @foreach (var id_fichier in Model.Id_fichiers)
+            {
+                <div class="col-3 col-lg-3 col-md-4 col-sm-6 ">
+                    <img src="https://localhost:44334/api/Fichier/Telechargement/@id_fichier" class="img-thumbnail mt-1" alt="image@id_fichier" width="100%" height="auto">
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+}
+
 <div>
     @switch (Model.Statut)
     {
@@ -64,5 +84,5 @@
         default:
             break;
     }
-<a asp-action="Index">Retour a la liste</a>
+    <a asp-action="Index" class="btn btn-primary">Retour a la liste</a>
 </div>

@@ -20,7 +20,8 @@ namespace Make3DProjectUI.Mapper
                 Date_envoi = model.Date_envoi,
                 Date_modif = model.Date_modif,
                 NomCreateur = model.NomCreateur,
-                Statut = model.Statut
+                Statut = model.Statut,
+                Id_fichiers = model.Id_fichiers
             };
             return articleASPModel;
         }

@@ -15,5 +15,8 @@ namespace Make3DProjectDAL.Entities
         public DateTime Date_envoi { get; set; }
         public DateTime Date_modif { get; set; }
         public string NomCreateur { get; set; }
+
+        // Liste des ID des fichiers concernant l'articles
+        public IEnumerable<int> Id_fichiers { get; set; }
     }
 }

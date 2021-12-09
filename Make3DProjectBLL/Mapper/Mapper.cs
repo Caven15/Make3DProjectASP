@@ -67,7 +67,8 @@ namespace Make3DProjectBLL.Mapper
                 Description = model.Description,
                 Date_envoi = model.Date_envoi,
                 Date_modif = model.Date_modif,
-                NomCreateur = model.NomCreateur
+                NomCreateur = model.NomCreateur,
+                Id_fichiers = model.Id_fichiers
             };
         }
 
@@ -81,7 +82,8 @@ namespace Make3DProjectBLL.Mapper
                 Id_utilisateur = entity.Id_utilisateur,
                 Date_envoi = entity.Date_envoi,
                 Date_modif = entity.Date_modif,
-                NomCreateur = entity.NomCreateur
+                NomCreateur = entity.NomCreateur,
+                Id_fichiers = entity.Id_fichiers
             };
 
             if (articleService.EstSignale(entity.Id, token))
